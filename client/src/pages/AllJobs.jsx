@@ -7,7 +7,7 @@ import { useContext, createContext } from "react";
 export const loader = async () => {
   try {
     const { data } = await customFetch.get("/jobs");
-    console.log(data);
+    // console.log(data);
     return { data };
   } catch (error) {
     toast.error(error?.response?.data?.msg);
