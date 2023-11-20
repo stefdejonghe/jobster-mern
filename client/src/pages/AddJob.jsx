@@ -51,7 +51,7 @@ const AddJob = () => {
           />
           <button
             type="submit"
-            className="btn btn-block from-btn"
+            className="btn btn-block form-btn"
             disabled={isSubmitting}
           >
             {isSubmitting ? "submitting..." : "submit"}
