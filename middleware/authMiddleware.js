@@ -11,7 +11,7 @@ export const authenticateUser = (req, res, next) => {
 
   try {
     const { userId, role } = verifyJWT(token);
-    const testUser = userId === "655b560624815ccfb1c4f6dc";
+    const testUser = userId === "655e09f8d6aa40f3bbdc6621";
     req.user = { userId, role, testUser };
     next();
   } catch (error) {
