@@ -44,6 +44,14 @@ app.use(express.json());
 app.use(helmet());
 app.use(mongoSanitize());
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "img-src 'self' data: https://res.cloudinary.com"
+  );
+  next();
+});
+
 app.use("/api/v1/jobs", authenticateUser, jobRouter);
 app.use("/api/v1/users", authenticateUser, userRouter);
 app.use("/api/v1/auth", authRouter);
